@@ -1,13 +1,16 @@
 package mts.dao;
 
+import mts.domain.CountryArea;
+import mts.domain.PassportOffice;
+import mts.domain.RegisterOffice;
+import mts.domain.Street;
+import mts.exception.DaoException;
+import org.junit.Assert;
 import org.junit.BeforeClass;
 import org.junit.Test;
 
-import java.io.IOException;
-import java.net.URISyntaxException;
 import java.net.URL;
 import java.nio.file.Files;
-import java.nio.file.Path;
 import java.nio.file.Paths;
 import java.sql.Connection;
 import java.sql.SQLException;
@@ -45,23 +48,48 @@ public class DictionaryDaoImplTest {
         }
     }
 
+    //тест нбора улиц
     @Test
-    public void testExample() {
-        System.out.println("Result1");
+    public void testStreet() throws DaoException {
+        List<Street> d = new DictionaryDaoImpl().findStreets("про");
+        Assert.assertTrue(d.size() == 0);
+    }
+
+    // тест ПО
+    @Test
+    public void testPassportOffice() throws DaoException {
+        List<PassportOffice> po
+                = new DictionaryDaoImpl()
+                .findPassportOffices("010020000000");
+        Assert.assertTrue(po.size() == 0);
     }
 
     @Test
-//    @Ignore
-    public void testExample2() {
-        System.out.println("Result2");
+    public void testRegistertOffice() throws DaoException {
+        List<RegisterOffice> ro
+                = new DictionaryDaoImpl().
+                findRegisterOffices("010010000000");
+        Assert.assertTrue(ro.size() == 0);
     }
 
     @Test
-    public void testExample3() {
-        System.out.println("Result3");
-//        throw new RuntimeException("Bad result");
-    }
+    public void testAreas() throws DaoException {
 
+
+        List<CountryArea> ca1
+                = new DictionaryDaoImpl().findAreas("");
+        Assert.assertTrue(ca1.size() == 0);
+
+        List<CountryArea> ca2
+                = new DictionaryDaoImpl().findAreas("020000000000");
+        Assert.assertTrue(ca2.size() == 0);
+        List<CountryArea> ca3
+                = new DictionaryDaoImpl().findAreas("020010000000");
+        Assert.assertTrue(ca3.size() == 0);
+        List<CountryArea> ca4
+                = new DictionaryDaoImpl().findAreas("020010010000");
+        Assert.assertTrue(ca4.size() == 0);
+    }
 }
 
 /*
