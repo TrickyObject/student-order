@@ -35,7 +35,7 @@ public class DictionaryDaoImplTest {
         List<String> str1 = Files.readAllLines(Paths.get(url1.toURI()));
         String sql1 = str1.stream().collect(Collectors.joining());
 
-        List<String> str2 = Files.readAllLines(Paths.get(url1.toURI()));
+        List<String> str2 = Files.readAllLines(Paths.get(url2.toURI()));
         String sql2 = str2.stream().collect(Collectors.joining());
 
         try (Connection connection = ConnectionBuilder.getConnection();
@@ -52,7 +52,7 @@ public class DictionaryDaoImplTest {
     @Test
     public void testStreet() throws DaoException {
         List<Street> d = new DictionaryDaoImpl().findStreets("про");
-        Assert.assertTrue(d.size() == 0);
+        Assert.assertTrue(d.size() == 2);
     }
 
     // тест ПО
@@ -61,7 +61,7 @@ public class DictionaryDaoImplTest {
         List<PassportOffice> po
                 = new DictionaryDaoImpl()
                 .findPassportOffices("010020000000");
-        Assert.assertTrue(po.size() == 0);
+        Assert.assertTrue(po.size() == 2);
     }
 
     @Test
@@ -69,26 +69,25 @@ public class DictionaryDaoImplTest {
         List<RegisterOffice> ro
                 = new DictionaryDaoImpl().
                 findRegisterOffices("010010000000");
-        Assert.assertTrue(ro.size() == 0);
+        Assert.assertTrue(ro.size() == 2);
     }
 
     @Test
     public void testAreas() throws DaoException {
 
-
         List<CountryArea> ca1
                 = new DictionaryDaoImpl().findAreas("");
-        Assert.assertTrue(ca1.size() == 0);
+        Assert.assertTrue(ca1.size() == 2);
 
         List<CountryArea> ca2
                 = new DictionaryDaoImpl().findAreas("020000000000");
-        Assert.assertTrue(ca2.size() == 0);
+        Assert.assertTrue(ca2.size() == 2);
         List<CountryArea> ca3
                 = new DictionaryDaoImpl().findAreas("020010000000");
-        Assert.assertTrue(ca3.size() == 0);
+        Assert.assertTrue(ca3.size() == 2);
         List<CountryArea> ca4
                 = new DictionaryDaoImpl().findAreas("020010010000");
-        Assert.assertTrue(ca4.size() == 0);
+        Assert.assertTrue(ca4.size() == 2);
     }
 }
 

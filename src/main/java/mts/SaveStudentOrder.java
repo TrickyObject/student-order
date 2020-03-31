@@ -12,12 +12,11 @@ public class SaveStudentOrder {
 
     public static void main(String[] args) throws Exception {
 
-//        StudentOrder so = buildStudentOrder(10);
-//        StudentOrderDao dao = new StudentOrderDaoImpl();
-//        Long id = dao.saveStudentOrder(so);
-//        System.out.println("Добавлена запись с идентификатором:" + id);
-
+        StudentOrder so = buildStudentOrder(10);
         StudentOrderDao dao = new StudentOrderDaoImpl();
+        Long id = dao.saveStudentOrder(so);
+        System.out.println("Добавлена запись с идентификатором:" + id);
+//        StudentOrderDao dao = new StudentOrderDaoImpl();
         List<StudentOrder> soList = dao.getStudentOrders();
         for (StudentOrder s : soList) {
             System.out.println(s.getStudentOrderId());
