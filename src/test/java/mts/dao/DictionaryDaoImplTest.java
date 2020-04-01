@@ -8,6 +8,8 @@ import mts.exception.DaoException;
 import org.junit.Assert;
 import org.junit.BeforeClass;
 import org.junit.Test;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 import java.net.URL;
 import java.nio.file.Files;
@@ -15,10 +17,13 @@ import java.nio.file.Paths;
 import java.sql.Connection;
 import java.sql.SQLException;
 import java.sql.Statement;
+import java.time.LocalDateTime;
 import java.util.List;
 import java.util.stream.Collectors;
 
 public class DictionaryDaoImplTest {
+
+    private static final Logger logger = LoggerFactory.getLogger(DictionaryDaoImplTest.class);
 
     // выполянется 1 раз в самом начале
     @BeforeClass
@@ -29,6 +34,8 @@ public class DictionaryDaoImplTest {
     //тест нбора улиц
     @Test
     public void testStreet() throws DaoException {
+        LocalDateTime dt = LocalDateTime.now();
+        logger.info("TEST STREET {}", dt);
         List<Street> d = new DictionaryDaoImpl().findStreets("про");
         Assert.assertTrue(d.size() == 2);
     }
