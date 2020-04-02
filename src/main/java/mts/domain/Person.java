@@ -61,4 +61,15 @@ public abstract class Person {
     public void setAdress(Adress adress) {
         this.adress = adress;
     }
+
+    @Override
+    public String toString() {
+        return "Person{" +
+                "fName='" + fName + '\'' +
+                ", sName='" + sName + '\'' +
+                ", pName='" + pName + '\'' +
+                ", bd=" + bd +
+                ", adress=" + adress +
+                '}';
+    }
 }

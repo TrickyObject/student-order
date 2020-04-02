@@ -100,4 +100,20 @@ public class StudentOrder {
     public List<Child> getChild() {
         return children;
     }
+
+    @Override
+    public String toString() {
+        return "StudentOrder{" +
+                "studentOrderId=" + studentOrderId +
+                ", studentOrderDate=" + studentOrderDate +
+                ", studentOrderStatus=" + studentOrderStatus +
+                ", husband=" + husband +
+                ", wife=" + wife +
+                ", children=" + children +
+                ", MarriageCertId='" + MarriageCertId + '\'' +
+                ", MarriageDate=" + MarriageDate +
+                ", MarriageOffice=" + MarriageOffice +
+                '}';
+    }
 }
+

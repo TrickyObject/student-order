@@ -29,4 +29,12 @@ public class Street {
     public void setStreet_name(String street_name) {
         this.street_name = street_name;
     }
+
+    @Override
+    public String toString() {
+        return "Street{" +
+                "street_code=" + street_code +
+                ", street_name='" + street_name + '\'' +
+                '}';
+    }
 }

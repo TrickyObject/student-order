@@ -3,12 +3,12 @@ package mts.dao;
 import mts.config.Config;
 import mts.domain.*;
 import mts.exception.DaoException;
-import mts.mail.MailSender;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 import java.sql.*;
 import java.time.LocalDate;
 import java.time.LocalDateTime;
-import java.time.temporal.WeekFields;
 import java.util.HashMap;
 import java.util.LinkedList;
 import java.util.List;
@@ -18,6 +18,8 @@ import java.util.stream.Collectors;
 import static mts.config.Config.DB_LIMIT;
 
 public class StudentOrderDaoImpl implements StudentOrderDao {
+
+    private static final Logger logger = LoggerFactory.getLogger(StudentOrderDaoImpl.class);
 
     private static final String INSERT_ORDER
             = "INSERT INTO jc_student_order(" +
@@ -83,6 +85,8 @@ public class StudentOrderDaoImpl implements StudentOrderDao {
 
         Long res = -1L;
 
+        logger.debug("SO: {}", so);
+
         try (Connection connection = getConnection();
              PreparedStatement ps = connection.prepareStatement(INSERT_ORDER, new String[] {"student_order_id"} )) {
 
@@ -118,8 +122,9 @@ public class StudentOrderDaoImpl implements StudentOrderDao {
             }
 
 
-        } catch (SQLException ex) {
-            throw new DaoException(ex);
+        } catch (SQLException e) {
+            logger.error(e.getMessage(), e);
+            throw new DaoException(e);
         }
 
         return res;
@@ -167,6 +172,7 @@ public class StudentOrderDaoImpl implements StudentOrderDao {
 
             rs.close();
         } catch (SQLException e) {
+            logger.error(e.getMessage(), e);
             throw new DaoException(e);
         }
 
@@ -193,6 +199,7 @@ public class StudentOrderDaoImpl implements StudentOrderDao {
 
             rs.close();
         } catch (SQLException e) {
+            logger.error(e.getMessage(), e);
             throw new DaoException(e);
         }
 
