@@ -30,12 +30,12 @@ public class FakeCityRegChecker implements CityRegisterChecker {
 
             if(serial.equals(GOOD_H) || serial.equals(GOOD_W)) {
 
-                response.setExisting(true);
+                response.setRegistered(true);
                 response.setTemporal(false);
             }
 
             if(serial.equals(BAD_H) || serial.equals(BAD_W)) {
-                response.setExisting(false);
+                response.setRegistered(false);
             }
 
             if(serial.equals(BAD_H) || serial.equals(BAD_W)) {
@@ -50,7 +50,7 @@ public class FakeCityRegChecker implements CityRegisterChecker {
         }
 
         if (person instanceof Child) {
-            response.setExisting(true);
+            response.setRegistered(true);
             response.setTemporal(true);
 
         }

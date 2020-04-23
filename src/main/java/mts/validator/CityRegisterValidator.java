@@ -11,8 +11,6 @@ import mts.exception.TransportException;
 import mts.validator.city.CityRegisterChecker;
 import mts.validator.city.FakeCityRegChecker;
 
-import java.util.List;
-
 public class CityRegisterValidator {
 
     public String host;
@@ -47,7 +45,7 @@ public class CityRegisterValidator {
 
         try {
             CityRegisterResponse tmp = pChecker.checkPerson(person);
-            state = tmp.isExisting() ?
+            state = tmp.isRegistered() ?
                     AnswerCityRegisterItem.CityState.YES :
                     AnswerCityRegisterItem.CityState.NO;
 
