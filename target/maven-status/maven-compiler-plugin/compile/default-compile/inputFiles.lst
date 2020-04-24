@@ -5,7 +5,6 @@ E:\Dev\Projects\Java\student-order\src\main\java\mts\domain\Child.java
 E:\Dev\Projects\Java\student-order\src\main\java\mts\domain\Street.java
 E:\Dev\Projects\Java\student-order\src\main\java\mts\validator\city\RealCityRegChecker.java
 E:\Dev\Projects\Java\student-order\src\main\java\mts\exception\DaoException.java
-E:\Dev\Projects\Java\student-order\src\main\java\mts\validator\city\FakeCityRegChecker.java
 E:\Dev\Projects\Java\student-order\src\main\java\mts\dao\StudentOrderDao.java
 E:\Dev\Projects\Java\student-order\src\main\java\mts\domain\PassportOffice.java
 E:\Dev\Projects\Java\student-order\src\main\java\mts\validator\MariageValidator.java
@@ -17,12 +16,14 @@ E:\Dev\Projects\Java\student-order\src\main\java\mts\domain\register\AnswerCityR
 E:\Dev\Projects\Java\student-order\src\main\java\mts\domain\StudentOrder.java
 E:\Dev\Projects\Java\student-order\src\main\java\mts\domain\Adress.java
 E:\Dev\Projects\Java\student-order\src\main\java\mts\mail\MailSender.java
+E:\Dev\Projects\Java\student-order\src\main\java\mts\util\LocalDateAdapter.java
 E:\Dev\Projects\Java\student-order\src\main\java\mts\validator\city\CityRegisterChecker.java
+E:\Dev\Projects\Java\student-order\src\main\java\mts\domain\register\CityRegisterRequest.java
 E:\Dev\Projects\Java\student-order\src\main\java\mts\SaveStudentOrder.java
 E:\Dev\Projects\Java\student-order\src\main\java\mts\domain\student\AnswerStudent.java
 E:\Dev\Projects\Java\student-order\src\main\java\mts\validator\StudentValidator.java
+E:\Dev\Projects\Java\student-order\src\main\java\mts\dao\ConnectionBuilder.java
 E:\Dev\Projects\Java\student-order\src\main\java\mts\exception\CityRegException.java
-E:\Dev\Projects\Java\student-order\src\main\java\mts\exception\TransportException.java
 E:\Dev\Projects\Java\student-order\src\main\java\mts\domain\children\AnswerChild.java
 E:\Dev\Projects\Java\student-order\src\main\java\mts\dao\DictionaryDao.java
 E:\Dev\Projects\Java\student-order\src\main\java\mts\StudentOrderValidator.java

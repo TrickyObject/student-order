@@ -7,9 +7,8 @@ import mts.domain.register.CityRegisterResponse;
 import mts.domain.StudentOrder;
 import mts.domain.register.AnswerCityRegister;
 import mts.exception.CityRegException;
-import mts.exception.TransportException;
 import mts.validator.city.CityRegisterChecker;
-import mts.validator.city.FakeCityRegChecker;
+import mts.validator.city.RealCityRegChecker;
 
 public class CityRegisterValidator {
 
@@ -22,7 +21,7 @@ public class CityRegisterValidator {
 
     public CityRegisterValidator() {
 
-        pChecker = new FakeCityRegChecker();
+        pChecker = new RealCityRegChecker();
     }
 
     public AnswerCityRegister checkRegistration(StudentOrder so) {
@@ -54,15 +53,12 @@ public class CityRegisterValidator {
             state = AnswerCityRegisterItem.CityState.ERROR;
             error = new AnswerCityRegisterItem.CityError(e.getCode(), e.getMessage());
 
-        } catch (TransportException e) {
-            e.printStackTrace(System.out);
-            state = AnswerCityRegisterItem.CityState.ERROR;
-            error = new AnswerCityRegisterItem.CityError(IN_CODE, e.getMessage());
         }
 
         AnswerCityRegisterItem ans = new AnswerCityRegisterItem(state, person, error);
 
-        return null;
+        return ans;
+//        return null;
     }
 }
 

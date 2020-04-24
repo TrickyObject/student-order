@@ -1,11 +1,10 @@
-mts\validator\city\FakeCityRegChecker.class
 mts\validator\StudentValidator.class
+mts\util\LocalDateAdapter.class
 mts\SaveStudentOrder.class
 mts\validator\ChildValidator.class
 mts\domain\marriage\AnswerMariage.class
 mts\domain\Street.class
 mts\exception\CityRegException.class
-mts\exception\TransportException.class
 mts\config\Config.class
 mts\dao\StudentOrderDaoImpl.class
 mts\domain\PassportOffice.class
@@ -19,6 +18,7 @@ mts\domain\register\AnswerCityRegisterItem.class
 mts\domain\Person.class
 mts\mail\MailSender.class
 mts\domain\student\AnswerStudent.class
+mts\domain\register\CityRegisterRequest.class
 mts\domain\StudentOrder.class
 mts\dao\StudentOrderDao.class
 mts\domain\register\AnswerCityRegister.class
@@ -26,6 +26,7 @@ mts\domain\RegisterOffice.class
 mts\exception\DaoException.class
 mts\domain\register\AnswerCityRegisterItem$CityError.class
 mts\domain\children\AnswerChild.class
+mts\dao\ConnectionBuilder.class
 mts\domain\Adress.class
 mts\domain\CountryArea.class
 mts\validator\MariageValidator.class

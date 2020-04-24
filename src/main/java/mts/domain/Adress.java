@@ -3,7 +3,8 @@ package mts.domain;
 public class Adress {
 
     // скорее всего будет провал в расширении
-    // 10:00
+    // 10:00да она и грязная ещё сильно
+
     private String postCode;
     private Street street;
     private String building;

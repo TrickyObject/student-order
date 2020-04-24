@@ -12,7 +12,7 @@ public class AnswerCityRegister {
     }
 
     public void addItem(AnswerCityRegisterItem item) {
-        if (item == null) {
+        if (items == null) {
             items = new ArrayList<>(10);
         }
 

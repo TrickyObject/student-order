@@ -5,7 +5,6 @@ import mts.domain.Child;
 import mts.domain.register.CityRegisterResponse;
 import mts.domain.Person;
 import mts.exception.CityRegException;
-import mts.exception.TransportException;
 
 public class FakeCityRegChecker implements CityRegisterChecker {
 
@@ -20,7 +19,7 @@ public class FakeCityRegChecker implements CityRegisterChecker {
 
 
     public CityRegisterResponse checkPerson(Person person)
-            throws CityRegException, TransportException {
+            throws CityRegException {
 
         CityRegisterResponse response = new CityRegisterResponse();
 
@@ -43,10 +42,6 @@ public class FakeCityRegChecker implements CityRegisterChecker {
                 throw ex;
             }
 
-            if(serial.equals(ERROR_T1) || serial.equals(ERROR_T2)) {
-                TransportException ex = new TransportException("Transport ERROR " + serial);
-                throw ex;
-            }
         }
 
         if (person instanceof Child) {

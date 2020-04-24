@@ -48,15 +48,6 @@ public class StudentOrderValidator {
         } catch (DaoException e) {
             e.printStackTrace();
         }
-
-        /*
-        for (int i = 0; i < soList.length; i++) {
-            System.out.println("============ Проверяем заказ номер: "+i);
-            checkOneOrder(soList[i]);
-        }
-
-         */
-
     }
 
     public List<StudentOrder> readStudentOrders() throws DaoException {
@@ -66,13 +57,13 @@ public class StudentOrderValidator {
 
     public void checkOneOrder(StudentOrder so) {
 
-        AnswerCityRegister cr = checkRegistration(so);
+        AnswerCityRegister cityAnswer = checkRegistration(so);
 
 //        AnswerMariage am = checkMarriage(so);
 //        AnswerChild ac = checkChild(so);
 //        AnswerStudent as = checkStudent(so);
 
-        sendMail(so);
+//        sendMail(so);
     }
 
     //

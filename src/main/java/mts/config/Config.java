@@ -1,7 +1,6 @@
 package mts.config;
 
 import java.io.*;
-import java.net.URL;
 import java.util.Properties;
 
 public class Config {
@@ -10,12 +9,14 @@ public class Config {
     public static final String DB_LOGIN = "db.login";
     public static final String DB_PWD = "db.password";
     public static final String DB_LIMIT = "db.limit";
+    public static final String CR_URL = "cr.url";
+
 
     private static Properties properties = new Properties();
 
     public static String getProp(String name) {
 
-        String fileName = "dao.properties";
+        String fileName = "config.properties";
 
         if (properties.isEmpty()) {
             try (InputStream is = Config.class.getClassLoader()
@@ -37,7 +38,7 @@ public class Config {
 /*
             try (
                     InputStream is = Config.class.getClassLoader().
-                    getResourceAsStream("src/dao.properties")
+                    getResourceAsStream("src/config.properties")
 
             ) {
                 properties.load(is);
